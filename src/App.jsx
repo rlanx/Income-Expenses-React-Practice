@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useReducer } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -42,15 +42,14 @@ function App() {
       expense : reportExpense
     }}> {/* Provider เป็นการส่งข้อมูล */}
         <div className='container'>
-          <h2>บัญชีรายรับ - รายจ่าย</h2>
+          <h2 className='title'>บัญชีรายรับ - รายจ่าย</h2>
           <Report/>
           <Form addData={addNewData}/>
           <Transaction data={items}/> 
           {/* ส่ง data ไปให้ Transaction component */}
         </div>
     </Datacontext.Provider>
-    
-  )
+  );
 }
 
 export default App
