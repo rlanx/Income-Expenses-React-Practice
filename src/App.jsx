@@ -32,8 +32,8 @@ function App() {
     const income = amounts.filter( element => element > 0).reduce((total, element) => total += element, 0) // กรองข้อมูลที่เป้นค่า + ไว้ใน array income
     const expense = (amounts.filter( element => element < 0).reduce((total, element) => total += element, 0))*-1  // กรองข้อมูลที่เป้นค่า - ไว้ใน array expense
   
-    setReportIncome(income)
-    setReportExpense(expense)
+    setReportIncome(income.toFixed(2))
+    setReportExpense(expense.toFixed(2))
   },[items, reportIncome, reportExpense])
 
   return (
